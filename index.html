@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristine & Violet 💜</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#050816,#130b2d,#25114d,#000);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+canvas{
+position:fixed;
+left:0;
+top:0;
+z-index:-2;
+}
+
+.card{
+
+width:90%;
+max-width:380px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:25px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 0 30px rgba(255,255,255,.2);
+
+animation:fade 2s;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.title{
+
+font-size:32px;
+
+font-weight:bold;
+
+color:#d9b3ff;
+
+text-shadow:0 0 15px violet;
+
+margin-bottom:15px;
+
+}
+
+.heart{
+
+font-size:70px;
+
+animation:beat 1s infinite;
+
+margin-bottom:15px;
+
+}
+
+@keyframes beat{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+
+}
+
+button{
+
+margin-top:20px;
+
+padding:12px 30px;
+
+border:none;
+
+border-radius:30px;
+
+background:#9c5cff;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px violet;
+
+}
+
+#message{
+
+margin-top:20px;
+
+line-height:1.7;
+
+font-size:17px;
+
+min-height:120px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="card">
+
+<div class="heart">💜</div>
+
+<div class="title">
+Cristine & Violet
+</div>
+
+<p>
+Every star reminds me of you...
+</p>
+
+<button onclick="startLove()">
+Open My Heart
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+
+for(let i=0;i<250;i++){
+    stars.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        o:Math.random()
+    });
+}
+
+function drawStars(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    stars.forEach(s=>{
+
+        ctx.beginPath();
+
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+
+        ctx.fillStyle="rgba(255,255,255,"+s.o+")";
+
+        ctx.fill();
+
+        s.o += (Math.random()-0.5)*0.05;
+
+        if(s.o<0.2)s.o=0.2;
+
+        if(s.o>1)s.o=1;
+
+    });
+
+    requestAnimationFrame(drawStars);
+}
+
+drawStars();
+
+function shootingStar(){
+
+    let x=Math.random()*canvas.width;
+
+    let y=Math.random()*200;
+
+    let len=180;
+
+    let t=0;
+
+    let timer=setInterval(()=>{
+
+        ctx.beginPath();
+
+        ctx.moveTo(x+t,y+t);
+
+        ctx.lineTo(x+t+len,y+t+len);
+
+        ctx.strokeStyle="rgba(255,255,255,.9)";
+
+        ctx.lineWidth=2;
+
+        ctx.stroke();
+
+        t+=20;
+
+        if(t>350){
+
+            clearInterval(timer);
+
+        }
+
+    },20
+function startLove(){
+
+    index = 0;
+
+    document.getElementById("message").innerHTML="";
+
+    type();
+
+}
+
+function type(){
+
+    if(index < letter.length){
+
+        document.getElementById("message").innerHTML += letter.charAt(index);
+
+        index++;
+
+        setTimeout(type,40);
+
+    }
+
+}const colors=["💜","💖","💗","🤍"];
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.innerHTML=colors[Math.floor(Math.random()*colors.length)];
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="-30px";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+heart.style.pointerEvents="none";
+
+heart.style.zIndex="999";
+
+heart.style.animation="fall "+(4+Math.random()*3)+"s linear forwards";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},7000);
+
+}
+
+setInterval(createHeart,350);
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(0) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+const oldStart=startLove;
+
+startLove=function(){
+
+oldStart();
+
+for(let i=0;i<40;i++){
+
+setTimeout(createHeart,i*100);
+
+}
+
+};
+
+window.addEventListener("resize",()=>{
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+});
+
+</script>
+
+</body>
+</html>
