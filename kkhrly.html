@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elias | Noli Me Tangere</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0b0b0b, #21160d, #3b2412);
+            color: #f5ead7;
+            line-height: 1.8;
+        }
+
+        /* HEADER */
+        header {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+                radial-gradient(circle at center, #70451d, #0b0b0b 70%);
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .small-title {
+            letter-spacing: 5px;
+            font-size: 15px;
+            color: #d6a85c;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(45px, 9vw, 90px);
+            letter-spacing: 8px;
+            margin: 15px 0;
+            color: #f5d28b;
+            text-shadow: 0 0 25px rgba(245, 210, 139, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: #ddd0bd;
+            letter-spacing: 3px;
+        }
+
+        .line {
+            width: 100px;
+            height: 3px;
+            background: #c99645;
+            margin: 30px auto;
+        }
+
+        .scroll {
+            margin-top: 50px;
+            font-size: 13px;
+            color: #aaa;
+            letter-spacing: 2px;
+        }
+
+        /* CONTENT */
+        main {
+            max-width: 1050px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            color: #e4b968;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(228,185,104,0.25);
+            border-radius: 18px;
+            padding: 30px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #e4b968;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .card p {
+            color: #ddd4c7;
+            font-size: 16px;
+        }
+
+        /* CHARACTERISTICS */
+        .traits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .trait {
+            text-align: center;
+            padding: 25px 15px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 15px;
+            border: 1px solid rgba(228,185,104,0.2);
+            transition: 0.3s;
+        }
+
+        .trait:hover {
+            transform: scale(1.04);
+            background: rgba(228,185,104,0.12);
+        }
+
+        .trait h3 {
+            font-family: 'Cinzel', serif;
+            color: #f0c978;
+            font-size: 18px;
+        }
+
+        /* QUOTE */
+        .quote {
+            text-align: center;
+            padding: 45px 25px;
+            border-top: 1px solid #76562d;
+            border-bottom: 1px solid #76562d;
+        }
+
+        .quote p {
+            font-family: 'Cinzel', serif;
+            font-size: 23px;
+            color: #f3d79c;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 35px;
+            background: #080808;
+            color: #999;
+            font-size: 14px;
+        }
+
+        footer span {
+            color: #d6a85c;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                letter-spacing: 4px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header>
+        <div class="hero">
+
+            <div class="small-title">
+                Isang Tauhan sa Nobela ni Dr. Jose Rizal
+            </div>
+
+            <h1>ELIAS</h1>
+
+            <div class="line"></div>
+
+            <div class="subtitle">
+                NOLI ME TANGERE
+            </div>
+
+            <div class="scroll">
+                ↓ TALAMBUHAY AT KATANGIAN ↓
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- WHO IS ELIAS -->
+        <section>
+            <h2 class="section-title">Sino si Elias?</h2>
+
+            <div class="card">
+                <p>
+                    Si <b>Elias</b> ay isa sa mga mahalagang tauhan sa
+                    <i>Noli Me Tangere</i> ni Dr. Jose Rizal. Siya ay
+                    isang matapang at mapagmalasakit na Pilipino na
+                    tumulong kay Crisostomo Ibarra.
+                </p>
+
+                <br>
+
+                <p>
+                    Kinakatawan niya ang mga Pilipinong naghahangad
+                    ng pagbabago, katarungan, at kalayaan. Sa kabila
+                    ng mga pagsubok na kanyang naranasan, ipinakita
+                    niya ang kanyang tapang at kahandaang magsakripisyo
+                    para sa kapwa.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CHARACTERISTICS -->
+        <section>
+            <h2 class="section-title">Mga Katangian ni Elias</h2>
+
+            <div class="traits">
+
+                <div class="trait">
+                    <h3>Matapang</h3>
+                    <p>Hindi natatakot harapin ang mga panganib.</p>
+                </div>
+
+                <div class="trait">
+                    <h3>Matulungin</h3>
+                    <p>Laging handang tumulong sa nangangailangan.</p>
+                </div>
+
+                <div class="trait">
+                    <h3>Makatarungan</h3>
+                    <p>Nais niyang magkaroon ng patas na lipunan.</p>
+                </div>
+
+                <div class="trait">
+                    <h3>Mapagmahal</h3>
+                    <p>May malasakit siya sa kanyang kapwa at bayan.</p>
+                </div>
+
+                <div class="trait">
+                    <h3>Mapagsakripisyo</h3>
+                    <p>Handang isakripisyo ang sarili para sa iba.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- IBARRA -->
+        <section>
+            <h2 class="section-title">Elias at Crisostomo Ibarra</h2>
+
+            <div class="card">
+                <p>
+                    Naging magkaibigan sina Elias at Crisostomo Ibarra.
+                    Sa iba't ibang pagkakataon, tinulungan ni Elias si
+                    Ibarra upang makaligtas sa mga panganib.
+                </p>
+
+                <br>
+
+                <p>
+                    Bagama't magkaiba ang kanilang pananaw tungkol sa
+                    paraan ng pagbabago, pareho silang naghahangad ng
+                    mas mabuting kinabukasan para sa mga Pilipino.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- SACRIFICE -->
+        <section>
+            <h2 class="section-title">Ang Sakripisyo ni Elias</h2>
+
+            <div class="card">
+                <p>
+                    Ipinakita ni Elias ang kanyang tunay na tapang
+                    nang piliin niyang tumulong sa iba kahit nasa
+                    panganib ang kanyang sariling buhay.
+                    Ang kanyang mga ginawa ay nagpapakita ng
+                    pagmamahal sa kapwa at sa bayan.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- IMPORTANCE -->
+        <section>
+            <h2 class="section-title">Kahalagahan ng Tauhan</h2>
+
+            <div class="quote">
+                <p>
+                    “Si Elias ay simbolo ng tapang,
+                    sakripisyo, at pagnanais para sa pagbabago.”
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            NOLI ME TANGERE • <span>ELIAS</span>
+        </p>
+
+        <p>
+            Ginawa ni: Demabildo, Kharl Andrew M.
+        </p>
+
+    </footer>
+
+</body>
+</html>
